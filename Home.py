@@ -166,6 +166,9 @@ if option =='2021':
     print(result)
 
 
+
+
+
 #----------------------------------------------------------------------------------------------Call the scatter
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 
