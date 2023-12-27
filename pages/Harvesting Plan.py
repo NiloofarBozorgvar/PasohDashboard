@@ -410,9 +410,6 @@ if regime_selection == 'Heavy':
         species_list = df['Species'].unique().tolist()
         mapshow2019(df)
 
-
-
-asdasd
     if col3.button('Heavy regime; Diversity Objective'):
         data = pd.read_csv('Prescription stremlit/HDiversity.csv')
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
