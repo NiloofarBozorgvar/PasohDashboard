@@ -62,9 +62,9 @@ def display_design_elementv3(text):
         unsafe_allow_html=True,
     )
     #---------------------------------------------------------------------------------------------Radio Buttons
-def display_regime_selection():
-    selected_regime = st.radio('Select Regime', ['Heavy', 'Medium', 'Light'] , index=None)
-    return selected_regime
+def display_objective_selection():
+    selected_objective = st.radio('Select you forest management objective:', ['Economical', 'Diversity', 'Species-based', 'Dominance'] , index=None)
+    return selected_objective
 
 def main():
     st.title('Ecology Simulator')
@@ -72,16 +72,20 @@ def main():
 
 
 
-# ---------------------------------------------------------------------------------------------Plan 1 Sub table
-def display_custom_table_Plan1():
+# ------------------------------------------------------------------------------------objective economicsal Sub table
+def display_custom_table_Objective_economical():
     html_table = """
     <table style="border-collapse: collapse; width: 100%;">
         <thead>
-            <tr style="background-color: #104f17; color: #dfe6da; font-size: 12px; border-bottom: 3px solid #ddd;">
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Objective</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Trees to Harvest</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Remaining Trees</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Remaining Species</th>
+            <tr style="background-color: #104f17; color: #dfe6da; font-size: 9.2px; border-bottom: 3px solid #ddd;">
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Regimes</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Total # Trees to Harvest</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Remaining Species</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 24<</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 18-23</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 12-17</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 6-11</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 1-5</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Remaining Density</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">New AGB</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Stock</th>
@@ -90,7 +94,7 @@ def display_custom_table_Plan1():
         </thead>
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Economical</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -98,11 +102,19 @@ def display_custom_table_Plan1():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Diversity</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -110,7 +122,7 @@ def display_custom_table_Plan1():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Species-based</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -118,34 +130,31 @@ def display_custom_table_Plan1():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-            </tr>
-                <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Dominance</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
-            <!-- Add similar rows for the remaining data -->
         </tbody>
     </table>
     """
     st.markdown(html_table, unsafe_allow_html=True)
 
 
-# --------------------------------------------------------------------------------------------- Plan2 Sub Table
-def display_custom_table_Plan2():
+# ------------------------------------------------------------------------------------ objective diversity Sub Table
+def display_custom_table_objective_Diversity():
     html_table = """
     <table style="border-collapse: collapse; width: 100%;">
         <thead>
-            <tr style="background-color: #266b1c; color: #222577A; font-size: 12px; border-bottom: 3px solid #ddd;">
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Objective</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Trees to Harvest</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Remaining Trees</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Remaining Species</th>
+            <tr style="background-color: #266b1c; color: #dfe6da; font-size: 9.2px; border-bottom: 3px solid #ddd;">
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Regimes</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Total # Trees to Harvest</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Remaining Species</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 24<</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 18-23</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 12-17</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 6-11</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 1-5</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Remaining Density</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">New AGB</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Stock</th>
@@ -154,9 +163,13 @@ def display_custom_table_Plan2():
         </thead>
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Economical</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">2</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -164,19 +177,13 @@ def display_custom_table_Plan2():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Diversity</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1410</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-            </tr>
-                <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Species-based</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1410</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -184,32 +191,39 @@ def display_custom_table_Plan2():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Dominance</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1410</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
-            <!-- Add similar rows for the remaining data -->
         </tbody>
     </table>
     """
     st.markdown(html_table, unsafe_allow_html=True)
 
 
-# ---------------------------------------------------------------------------------------------Plan 3 Sub Table
-def display_custom_table_Plan3():
+# ---------------------------------------------------------------------------------------objective species Sub Table
+def display_custom_table_objective_species():
     html_table = """
-    <table style="border-collapse: collapse; width: 100%;">
+       <table style="border-collapse: collapse; width: 100%;">
         <thead>
-            <tr style="background-color: #4b872b; color: #222577A; font-size: 12px; border-bottom: 3px solid #ddd;">
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Objective</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Trees to Harvest</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Remaining Trees</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Number of Remaining Species</th>
+            <tr style="background-color: #4b872b; color: #dfe6da; font-size: 9.2px; border-bottom: 3px solid #ddd;">
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Regimes</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Total # Trees to Harvest</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Remaining Species</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 24<</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 18-23</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 12-17</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 6-11</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 1-5</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Remaining Density</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">New AGB</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Stock</th>
@@ -218,9 +232,13 @@ def display_custom_table_Plan3():
         </thead>
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Economical</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1542</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -228,19 +246,13 @@ def display_custom_table_Plan3():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Diversity</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1542</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-            </tr>
-                <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Species-based</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1542</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -248,21 +260,90 @@ def display_custom_table_Plan3():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
-                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Dominance</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">1542</td>
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
             </tr>
-            <!-- Add similar rows for the remaining data -->
         </tbody>
     </table>
     """
     st.markdown(html_table, unsafe_allow_html=True)
-
+# ---------------------------------------------------------------------------------------objective dominance Sub Table
+def display_custom_table_objective_dominance():
+    html_table = """
+       <table style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr style="background-color: #4b872b; color: #dfe6da; font-size: 9.2px; border-bottom: 3px solid #ddd;">
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Regimes</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Total # Trees to Harvest</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Remaining Species</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 24<</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 18-23</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 12-17</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 6-11</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 1-5</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Remaining Density</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">New AGB</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Stock</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Loss</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="text-align: left; font-size: 14px;">
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+            </tr>
+            <tr style="text-align: left; font-size: 14px;">
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+            </tr>
+                <tr style="text-align: left; font-size: 14px;">
+                <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">832</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+            </tr>
+        </tbody>
+    </table>
+    """
+    st.markdown(html_table, unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------------------------Call Text Box
 
@@ -383,34 +464,47 @@ st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 display_design_elementv2('Note: To See the Detail of Regimes and Objective-based Prescription, You Need to Select the Desired Regime from the Radio Button below.')
 st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 # ---------------------------------------------------------------------------------------------------  button
-regime_selection = display_regime_selection()
+regime_selection = display_objective_selection()
 
-if regime_selection == 'Heavy':
-    st.write('Heavy regime')
+if regime_selection == 'Economical':
+    st.write('Economical Objective')
     df = pd.DataFrame(dataobjectiveheavy)
-    display_custom_table_Plan1()
+    display_custom_table_Objective_economical()
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 
     display_design_elementv3(
-        'Now based on the objective that you are interested in, you can see the information of the trrees that need to be chop down.')
+        'Now based on the objective and egime that you are interested in, you can see the location of the trrees that need to be chop down.')
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
 
-    if col1.button('Heavy regime; Economical Objective'):
+    if col1.button(' Economical Objective; Heavy regime'):
         st.write('Not Available Yet!')
 
-    if col2.button('Heavy regime; Species-based Objective'):
-        data = pd.read_csv('Prescription stremlit/HSpices.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+    if col2.button('Economical Objective; Medium regime'):
+        st.write('Not Available Yet!')
 
-    if col3.button('Heavy regime; Diversity Objective'):
+
+    if col3.button('Economical Objective; Light regime'):
+        st.write('Not Available Yet!')
+
+
+
+
+if regime_selection == 'Diversity':
+    st.write('Diversity Objective')
+    df = pd.DataFrame(dataobjectivemedium)
+    display_custom_table_objective_Diversity()
+    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+    display_design_elementv3(
+        ' Now based on the objective and regime that you are interested in, you can see the information of the trrees that need to be chop down.')
+    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+
+
+    col1, col2, col3 = st.columns(3)
+
+    if col1.button('Diversity Objective; Heavy regime'):
         data = pd.read_csv('Prescription stremlit/HDiversity.csv')
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
         data = data[['XCO', 'YCO', 'Species']]
@@ -419,41 +513,7 @@ if regime_selection == 'Heavy':
         species_list = df['Species'].unique().tolist()
         mapshow2019(df)
 
-    if col4.button('Heavy regime; Dominance Objective'):
-        data = pd.read_csv('Prescription stremlit/HDominance.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
-
-
-if regime_selection == 'Medium':
-    st.write('Medium regime')
-    df = pd.DataFrame(dataobjectivemedium)
-    display_custom_table_Plan2()
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    display_design_elementv3(
-        ' Now based on the objective that you are interested in, you can see the information of the trrees that need to be chop down.')
-    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
-
-
-    col1, col2, col3, col4 = st.columns(4)
-
-    if col1.button('Medium regime; Economical Objective'):
-        st.write('Not Available Yet!')
-
-    if col2.button('Medium regime; Species-based Objective'):
-        data = pd.read_csv('Prescription stremlit/MSpices.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
-
-    if col3.button('Medium regime; Diversity Objective'):
+    if col2.button('Diversity Objective; Medium regime'):
         data = pd.read_csv('Prescription stremlit/MDiversity.csv')
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
         data = data[['XCO', 'YCO', 'Species']]
@@ -462,42 +522,7 @@ if regime_selection == 'Medium':
         species_list = df['Species'].unique().tolist()
         mapshow2019(df)
 
-    if col4.button('Medium regime; Dominance Objective'):
-        data = pd.read_csv('Prescription stremlit/MDominance.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
-
-
-if regime_selection == 'Light':
-    st.write('Light regime')
-    df = pd.DataFrame(dataobjectivelight)
-    display_custom_table_Plan3()
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-
-    display_design_elementv3(
-        ' Now based on the objective that you are interested in, you can see the information of the trrees that need to be chop down.')
-    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
-
-
-    col1, col2, col3, col4 = st.columns(4)
-
-    if col1.button('Light regime; Economical Objective'):
-        st.write('Not Available Yet!')
-
-    if col2.button('Light regime; Species-based Objective'):
-        data = pd.read_csv('Prescription stremlit/LSpices.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
-
-    if col3.button('Light regime; Diversity Objective'):
+    if col3.button('Diversity Objective; Light regime'):
         data = pd.read_csv('Prescription stremlit/LDiversity.csv')
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
         data = data[['XCO', 'YCO', 'Species']]
@@ -506,8 +531,20 @@ if regime_selection == 'Light':
         species_list = df['Species'].unique().tolist()
         mapshow2019(df)
 
-    if col4.button('Light regime; Dominance Objective'):
-        data = pd.read_csv('Prescription stremlit/LDominance.csv')
+
+if regime_selection == 'Species-based':
+    st.write('Species-based Objective')
+    df = pd.DataFrame(dataobjectivemedium)
+    display_custom_table_objective_Diversity()
+    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+    display_design_elementv3(
+        ' Now based on the objective and regime that you are interested in, you can see the information of the trrees that need to be chop down.')
+    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+
+    if col1.button('Species-based Objective; Heavy regime'):
+        data = pd.read_csv('Prescription stremlit/HSpices.csv')
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
         data = data[['XCO', 'YCO', 'Species']]
         df = pd.DataFrame(data)
@@ -515,5 +552,58 @@ if regime_selection == 'Light':
         species_list = df['Species'].unique().tolist()
         mapshow2019(df)
 
+    if col2.button('Species-based Objective; Medium regime'):
+        data = pd.read_csv('Prescription stremlit/MSpices.csv')
+        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+        data = data[['XCO', 'YCO', 'Species']]
+        df = pd.DataFrame(data)
+        # Get unique species values for the selectbox
+        species_list = df['Species'].unique().tolist()
+        mapshow2019(df)
 
+    if col3.button('Species-based Objective; Light regime'):
+        data = pd.read_csv('Prescription stremlit/LSpices.csv')
+        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+        data = data[['XCO', 'YCO', 'Species']]
+        df = pd.DataFrame(data)
+        # Get unique species values for the selectbox
+        species_list = df['Species'].unique().tolist()
+        mapshow2019(df)
 
+if regime_selection == 'Dominance':
+    st.write('Dominance Objective')
+    df = pd.DataFrame(dataobjectivemedium)
+    display_custom_table_objective_Diversity()
+    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+    display_design_elementv3(
+        ' Now based on the objective and regime that you are interested in, you can see the information of the trrees that need to be chop down.')
+    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+
+    if col1.button('Dominance Objective; Heavy regime'):
+        data = pd.read_csv('Prescription stremlit/HDominance.csv')
+        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+        data = data[['XCO', 'YCO', 'Species']]
+        df = pd.DataFrame(data)
+        # Get unique species values for the selectbox
+        species_list = df['Species'].unique().tolist()
+        mapshow2019(df)
+
+    if col2.button('Dominance Objective; Medium regime'):
+        data = pd.read_csv('Prescription stremlit/MDominance.csv')
+        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+        data = data[['XCO', 'YCO', 'Species']]
+        df = pd.DataFrame(data)
+        # Get unique species values for the selectbox
+        species_list = df['Species'].unique().tolist()
+        mapshow2019(df)
+
+    if col3.button('Dominance Objective; Light regime'):
+        data = pd.read_csv('Prescription stremlit/LDominance.csv')
+        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+        data = data[['XCO', 'YCO', 'Species']]
+        df = pd.DataFrame(data)
+        # Get unique species values for the selectbox
+        species_list = df['Species'].unique().tolist()
+        mapshow2019(df)
