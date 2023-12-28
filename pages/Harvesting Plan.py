@@ -63,7 +63,7 @@ def display_design_elementv3(text):
     )
     #---------------------------------------------------------------------------------------------Radio Buttons
 def display_objective_selection():
-    selected_objective = st.radio('Select you forest management objective:', ['Economical', 'Diversity', 'Species-based', 'Dominance'] , index=None)
+    selected_objective = st.radio('Select you forest management objective:', ['Economical (Note: Data for Economical objective is not available now.)', 'Diversity', 'Species-based', 'Dominance'] , index=None)
     return selected_objective
 
 def main():
@@ -416,8 +416,8 @@ dataobjectivelight = {
 # --------------------------------------------------Select Box
 
 option = st.selectbox(
-    "Select years for BDq",
-    ("2019", "2021"),
+    "Select the Prescription Method",
+    ("BDq",), index=None
 )
 
 # Create a DataFrame
@@ -456,154 +456,154 @@ html = f"""
         </tbody>
     </table>
 """
-
-st.write("Regimes available for Pasoh")
-st.markdown(html, unsafe_allow_html=True)
-#__________________________________________________________________________________________________________
-st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
-display_design_elementv2('Note: To See the Detail of Regimes and Objective-based Prescription, You Need to Select the Desired Regime from the Radio Button below.')
-st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
-# ---------------------------------------------------------------------------------------------------  button
-regime_selection = display_objective_selection()
-
-if regime_selection == 'Economical':
-    st.write('Economical Objective')
-    df = pd.DataFrame(dataobjectiveheavy)
-    display_custom_table_Objective_economical()
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-
-    display_design_elementv3(
-        'Now based on the objective and regime that you are interested in, you can see the location of the trrees that need to be chop down.')
+if option == "BDq":
+    st.write("Regimes available for Pasoh")
+    st.markdown(html, unsafe_allow_html=True)
+    #__________________________________________________________________________________________________________
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
-
-
-    col1, col2, col3 = st.columns(3)
-
-    if col1.button(' Economical Objective; Heavy regime'):
-        st.write('Not Available Yet!')
-
-    if col2.button('Economical Objective; Medium regime'):
-        st.write('Not Available Yet!')
-
-
-    if col3.button('Economical Objective; Light regime'):
-        st.write('Not Available Yet!')
-
-
-
-
-if regime_selection == 'Diversity':
-    st.write('Diversity Objective')
-    df = pd.DataFrame(dataobjectivemedium)
-    display_custom_table_objective_Diversity()
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    display_design_elementv3(
-        ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
+    display_design_elementv2('Note: To See the Detail of Regimes and Objective-based Prescription, You Need to Select the Desired Regime from the Radio Button below.')
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+    # ---------------------------------------------------------------------------------------------------  button
+    regime_selection = display_objective_selection()
 
-
-    col1, col2, col3 = st.columns(3)
-
-    if col1.button('Diversity Objective; Heavy regime'):
-        data = pd.read_csv('Prescription stremlit/HDiversity.csv')
+    if regime_selection == 'Economical':
+        st.write('Economical Objective')
+        df = pd.DataFrame(dataobjectiveheavy)
+        display_custom_table_Objective_economical()
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
 
-    if col2.button('Diversity Objective; Medium regime'):
-        data = pd.read_csv('Prescription stremlit/MDiversity.csv')
+        display_design_elementv3(
+            'Now based on the objective and regime that you are interested in, you can see the location of the trrees that need to be chop down.')
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+
+
+        col1, col2, col3 = st.columns(3)
+
+        if col1.button(' Economical Objective; Heavy regime'):
+            st.write('Not Available Yet!')
+
+        if col2.button('Economical Objective; Medium regime'):
+            st.write('Not Available Yet!')
+
+
+        if col3.button('Economical Objective; Light regime'):
+            st.write('Not Available Yet!')
+
+
+
+
+    if regime_selection == 'Diversity':
+        st.write('Diversity Objective')
+        df = pd.DataFrame(dataobjectivemedium)
+        display_custom_table_objective_Diversity()
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+        display_design_elementv3(
+            ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
-    if col3.button('Diversity Objective; Light regime'):
-        data = pd.read_csv('Prescription stremlit/LDiversity.csv')
+
+        col1, col2, col3 = st.columns(3)
+
+        if col1.button('Diversity Objective; Heavy regime'):
+            data = pd.read_csv('Prescription stremlit/HDiversity.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
+
+        if col2.button('Diversity Objective; Medium regime'):
+            data = pd.read_csv('Prescription stremlit/MDiversity.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
+
+        if col3.button('Diversity Objective; Light regime'):
+            data = pd.read_csv('Prescription stremlit/LDiversity.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
+
+
+    if regime_selection == 'Species-based':
+        st.write('Species-based Objective')
+        df = pd.DataFrame(dataobjectivemedium)
+        display_custom_table_objective_Diversity()
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+        display_design_elementv3(
+            ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
+        col1, col2, col3 = st.columns(3)
 
-if regime_selection == 'Species-based':
-    st.write('Species-based Objective')
-    df = pd.DataFrame(dataobjectivemedium)
-    display_custom_table_objective_Diversity()
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    display_design_elementv3(
-        ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
-    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+        if col1.button('Species-based Objective; Heavy regime'):
+            data = pd.read_csv('Prescription stremlit/HSpices.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
 
-    col1, col2, col3 = st.columns(3)
+        if col2.button('Species-based Objective; Medium regime'):
+            data = pd.read_csv('Prescription stremlit/MSpices.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
 
-    if col1.button('Species-based Objective; Heavy regime'):
-        data = pd.read_csv('Prescription stremlit/HSpices.csv')
+        if col3.button('Species-based Objective; Light regime'):
+            data = pd.read_csv('Prescription stremlit/LSpices.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
+
+    if regime_selection == 'Dominance':
+        st.write('Dominance Objective')
+        df = pd.DataFrame(dataobjectivemedium)
+        display_custom_table_objective_Diversity()
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+        display_design_elementv3(
+            ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
-    if col2.button('Species-based Objective; Medium regime'):
-        data = pd.read_csv('Prescription stremlit/MSpices.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+        col1, col2, col3 = st.columns(3)
 
-    if col3.button('Species-based Objective; Light regime'):
-        data = pd.read_csv('Prescription stremlit/LSpices.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+        if col1.button('Dominance Objective; Heavy regime'):
+            data = pd.read_csv('Prescription stremlit/HDominance.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
 
-if regime_selection == 'Dominance':
-    st.write('Dominance Objective')
-    df = pd.DataFrame(dataobjectivemedium)
-    display_custom_table_objective_Diversity()
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    display_design_elementv3(
-        ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
-    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+        if col2.button('Dominance Objective; Medium regime'):
+            data = pd.read_csv('Prescription stremlit/MDominance.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
 
-    col1, col2, col3 = st.columns(3)
-
-    if col1.button('Dominance Objective; Heavy regime'):
-        data = pd.read_csv('Prescription stremlit/HDominance.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
-
-    if col2.button('Dominance Objective; Medium regime'):
-        data = pd.read_csv('Prescription stremlit/MDominance.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
-
-    if col3.button('Dominance Objective; Light regime'):
-        data = pd.read_csv('Prescription stremlit/LDominance.csv')
-        st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-        data = data[['XCO', 'YCO', 'Species']]
-        df = pd.DataFrame(data)
-        # Get unique species values for the selectbox
-        species_list = df['Species'].unique().tolist()
-        mapshow2019(df)
+        if col3.button('Dominance Objective; Light regime'):
+            data = pd.read_csv('Prescription stremlit/LDominance.csv')
+            st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+            data = data[['XCO', 'YCO', 'Species']]
+            df = pd.DataFrame(data)
+            # Get unique species values for the selectbox
+            species_list = df['Species'].unique().tolist()
+            mapshow2019(df)
