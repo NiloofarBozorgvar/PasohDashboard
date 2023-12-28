@@ -473,7 +473,7 @@ if regime_selection == 'Economical':
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 
     display_design_elementv3(
-        'Now based on the objective and egime that you are interested in, you can see the location of the trrees that need to be chop down.')
+        'Now based on the objective and regime that you are interested in, you can see the location of the trrees that need to be chop down.')
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
 
@@ -498,7 +498,7 @@ if regime_selection == 'Diversity':
     display_custom_table_objective_Diversity()
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
     display_design_elementv3(
-        ' Now based on the objective and regime that you are interested in, you can see the information of the trrees that need to be chop down.')
+        ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
 
@@ -538,7 +538,7 @@ if regime_selection == 'Species-based':
     display_custom_table_objective_Diversity()
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
     display_design_elementv3(
-        ' Now based on the objective and regime that you are interested in, you can see the information of the trrees that need to be chop down.')
+        ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
@@ -576,7 +576,7 @@ if regime_selection == 'Dominance':
     display_custom_table_objective_Diversity()
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
     display_design_elementv3(
-        ' Now based on the objective and regime that you are interested in, you can see the information of the trrees that need to be chop down.')
+        ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
     st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
