@@ -1,23 +1,7 @@
-from this import s
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from st_pages import Page, show_pages, add_page_title
 
-add_page_title()
-
-show_pages(
-    [
-        Page("Home.py", "Home", "🏠"),
-        Page("pages/1.Summary.py", "Summary", "📖"),
-        Page("pages/2.Insight.py", "Insight", "📝"),
-        Page("pages/3.Harvesting Plan: Heavy.py", "Harvesting Plan: Heavy", "🌲"),
-        Page("pages/4.Harvesting Plan: Medium.py", "Harvesting Plan: Medium", "🌳"),
-        Page("pages/5.Harvesting Plan: Light.py", "Harvesting Plan: Light", "🌴"),
-        Page("pages/Harvesting Plan.py", "Harvesting Plan", "")
-    ]
-)
 #-----------------------------------------------------------------------------------------------bar chart function 2019
 import pandas as pd
 def clustering2019(x_axis_ranges , df):
@@ -119,28 +103,16 @@ def mapshowpredict(df):
     )
 
     st.plotly_chart(fig)
-    #--------------------
-    import streamlit as st
-
 #------------------------------------------------------------------------------------------------------text box
 import streamlit as st
 
 def display_design_element():
+    st.subheader("Pasoh Forest Malaysia")
 
-    st.subheader("for Pasoh Forest Reserve")
-    st.image('Pasoh.jpeg', caption='Pasoh Forest Reserve')
-
-    text = (" The Pasoh Forest Reserve, \na nature reserve located about 8 km from Simpang Pertang, "
-            "Malaysia and around 70 km southeast of Kuala Lumpur. It has a total area of 2,450 hectares,"
-            " with a core area of 600 ha surrounded by a buffer zone. "
-            "Palm oil plantations surround the reserve on three sides while the other side "
-            "adjoins a selectively logged dipterocarp forest. An average of 2 metres of rain fall each year, "
-            "ranging from 1,728 to 3,112 mm. In 1987, a 50 hectare forest dynamics plot was established in the reserve."
-            " Several censuses of sever population in the plot have been carried out, "
-            "the first in 1989, and have counted about 340,000 trees belonging to more that 800 species in that plot.")
+    text = "In this section the 'Actual' and 'Predicted' tree information (Number of Trees in each DBH classes, and Location of Trees) are displayed for years 2019 & 2021."
     font_size = 17
     font_color = "#333333"  # Dark grey
-    border_color = "#568203"  # green
+    border_color = "#FFA500"  # Orange
     border_width = 2
 
     # Display the bordered text box for design visualization
@@ -153,7 +125,7 @@ def display_design_element():
         unsafe_allow_html=True,
     )
 
-#-----------------------------------------------------------------------------------Call first text
+
 def main():
     st.title('Ecology Simulator')
 
@@ -165,72 +137,59 @@ if __name__ == "__main__":
 
     st.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
 
-    # ----------------------------------------------------------------------------------------Text in colomns
-    import streamlit as st
-
-
-    def main():
-        st.title("Pasoh Forest Reserve Information")
-
-        left_column, right_column = st.columns(2)
-
-        # Left column content
-        with left_column:
-            st.header("Ecological Zone")
-            st.write("Forest Type:  Tropical rainforest")
-            st.write("Number of species:  948")
-            st.write("Number of stems:  444,338")
-            st.write("Number of Trees:  435,839")
-
-        # Right column content
-        with right_column:
-            st.header("Details")
-            st.write("Size: 50.00ha")
-            st.write("Dimensions: 1000 x 500")
-            st.write("Latitude: 2.982000000000")
-            st.write("Longitude: 102.313000000000")
-
-
-    if __name__ == "__main__":
-        main()
-#---------------------------------------------------------------------------------------------------map
+    #----------------------------------------------------------------------------------Option Bar
+    option = st.selectbox(
+        "Information of forest trees in year:",
+        ("2019", "2021"),
+    )
     st.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
 
-    import streamlit as st
-    import folium
+    #--------------------------------------------------------------------------------------Call Bar Chart 2019
+if option =='2019':
+    df = pd.read_csv('DBH2019.csv')
+    df = df[['Predicted DBH for 2019' , 'Actual DBH for 2019']]
+    # Define the ranges for x-axis
+    #st.write(df)
+    # ----------------Call the clustering function with your specified ranges and DataFrame
+    x_axis_ranges = ['1-14', '15-29', '30-44', '45-58', '59-200']
+    result = clustering2019(x_axis_ranges, df)  # 'df' is my DataFrame
+    print(result)
 
 
-    def main():
-        st.title("Pasoh Forest Reserve Location")
-
-        # Coordinates for Pasoh Forest Reserve
-        pasoh_coords = (2.982000000000, 102.313000000000)
-
-        # Create a Folium map centered around Pasoh Forest Reserve
-        map_pasoh = folium.Map(location=pasoh_coords, zoom_start=10)
-
-        # Add a marker for Pasoh Forest Reserve
-        folium.Marker(location=pasoh_coords, popup="Pasoh Forest Reserve").add_to(map_pasoh)
-
-        # Display the map using st.write()
-        folium_static_map(map_pasoh)
-
-
-    def folium_static_map(m):
-        width, height = 700, 400
-        html = m.get_root().render()
-        st.components.v1.html(html, width=width, height=height)
-
-
-    if __name__ == "__main__":
-        main()
+#---------------------------------------------------------------------------------------------Bar chart 2021
+if option =='2021':
+    df = pd.read_csv('DBH2021.csv')
+    df = df[['Predicted DBH for 2021' , 'Actual DBH for 2021']]
+    # ----------------Call the clustering function with your specified ranges and DataFrame
+    x_axis_ranges = ['1-14', '15-29', '30-44', '45-58', '59-200']
+    result = clustering2021(x_axis_ranges, df)  # 'df' is my DataFrame
+    print(result)
 
 
 
 
 
+#----------------------------------------------------------------------------------------------Call the scatter
+st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 
+data = pd.read_csv('AllNew.csv')
+data = data[['XCO' , 'YCO' , 'SP']]
+df = pd.DataFrame(data)
+print(df.columns.str.strip())
 
+# Get unique species values for the selectbox
+species_list = df['SP'].unique().tolist()
+selected_species = st.multiselect('Select Species to see their location', species_list)
 
+if selected_species:
+    filtered_df = df[df['SP'].isin(selected_species)]
+    mapshow2019(filtered_df)
+else:
+    mapshow2019(df)
 
-
+#----------------------------------------------------------------------------------------------Call the scatter predicted
+data = pd.read_csv('AllNew.csv')
+data = data[['XCO' , 'YCO']]
+df = pd.DataFrame(data)
+print(df.columns.str.strip())
+mapshowpredict(df)

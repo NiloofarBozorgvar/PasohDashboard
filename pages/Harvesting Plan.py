@@ -538,7 +538,7 @@ if option == "BDq":
         display_custom_table_objective_Diversity()
         st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
         display_design_elementv3(
-            ' Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
+            'Now based on the objective and regime that you are interested in, you can see the Location of the trrees that need to be chop down.')
         st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
         col1, col2, col3 = st.columns(3)
@@ -607,3 +607,4 @@ if option == "BDq":
             # Get unique species values for the selectbox
             species_list = df['Species'].unique().tolist()
             mapshow2019(df)
+           # st.balloons()
