@@ -135,7 +135,7 @@ def display_design_element():
     )
     font_size = 18
     font_color = "#333333"
-    border_color = "light green"
+    border_color = "green"
     background_color = "wight"
     border_width = 2
 
@@ -201,3 +201,4 @@ else:
     st.write("Please select a species.")
 
 #----------------------------------------------------------------------------------------
+

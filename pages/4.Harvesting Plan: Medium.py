@@ -80,15 +80,14 @@ def display_table_objective():
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Regimes</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Total # Trees to Harvest</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Remaining Species</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 24<</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 18-23</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 12-17</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 6-11</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest in DBH Class 1-5</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest DBH Class 24<</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest DBH Class 18-23</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest DBH Class 12-17</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest DBH Class 6-11</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;"># Trees to harvest DBH Class 1-5</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Remaining Density</th>
                 <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">New AGB</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Stock</th>
-                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Loss</th>
+                <th style="padding: 8px; border-right: 3px solid #ddd; border-top: 3px solid #ddd;">New Carbon Stock</th>
             </tr>
         </thead>
         <tbody>
@@ -101,10 +100,9 @@ def display_table_objective():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">62</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">24</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">10</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1653.80</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1255.66</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">11.71M</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Species-Based Objective</td>
@@ -115,10 +113,9 @@ def display_table_objective():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">60</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">24</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">10</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1698.20</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1301.42</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">11.80M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Dominance Objective</td>
@@ -129,15 +126,13 @@ def display_table_objective():
                 <td style="padding: 8px; border-right: 1px solid #ddd;">64</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">22</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">8</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1586.80</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">1282.21</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">11.66M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Economical Objective</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
