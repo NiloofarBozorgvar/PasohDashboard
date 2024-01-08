@@ -10,7 +10,7 @@ add_page_title()
 show_pages(
     [
         Page("Home.py", "Home", "🏠"),
-        Page("pages/1.Summary.py", "Summary", "📖"),
+        Page("pages/1.📖Summary.py", "Summary", "📖"),
         Page("pages/2.Insight.py", "Insight", "📝"),
         Page("pages/3.Harvesting Plan: Heavy.py", "Harvesting Plan: Heavy", "🌲"),
         Page("pages/4.Harvesting Plan: Medium.py", "Harvesting Plan: Medium", "🌳"),
