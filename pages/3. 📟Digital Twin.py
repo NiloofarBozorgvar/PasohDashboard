@@ -61,7 +61,7 @@ def mapshow_3d_with_line(df, key):
             x=[row['XCO'], row['XCO']], y=[row['YCO'], row['YCO']],
             z=[0, row['Height']],
             mode='lines',
-            line=dict(color='black', width=3),
+            line=dict(color='#5E4C3E', width=3),
             showlegend=False
         ))
 

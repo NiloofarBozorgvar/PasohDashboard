@@ -30,7 +30,7 @@ def display_design_element():
 
 st.title('Ecology Simulator')
 display_design_element()
-#-----------------------------------------------------------------
+#--------------------------------------------------------------------------Text
 
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 st.write('For **Heavy Regime**, you will see the Number of Trees need to be harvest and the carbon loss, '
@@ -202,4 +202,7 @@ if col3.button('***Dominance*** Objective; Heavy regime'):
 if col4.button('***Economical*** Objective; Heavy regime'):
     st.write('No Data Available Yet!')
 
+#--------------------------------------------------------------------------Text
 
+#st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+#st.write('See 🪵🪓')
