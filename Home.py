@@ -5,6 +5,7 @@ import pandas as pd
 import plotly.express as px
 from st_pages import Page, show_pages, add_page_title
 
+
 add_page_title()
 
 show_pages(

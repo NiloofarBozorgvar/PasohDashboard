@@ -10,7 +10,7 @@ def display_design_element():
             "size classes, growth rates, and spatial distribution. "
             "Understanding these facets provides understanding of Pasoh Forest's ecological dynamics, "
             "aiding in ecosystem management and conservation strategies.👋")
-    font_size = 17
+    font_size = 19
     font_color = "#333333"  # Dark grey
     border_color = "#FFA500"  # Orange
     border_width = 2
@@ -39,9 +39,27 @@ if __name__ == "__main__":
 #------------------------------------------------------------------------------------Metrics
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Number of Hectare", "2")
-col2.metric("Number of Trees", "1944")
-col3.metric("Number of Species", "380")
+
+# Custom styling for buttons
+button_style = """
+    height: 80px;
+    width: 230px;
+    background-color: #FFCFAB; 
+    color: #414F4C; /* White text color */
+    border: px solid #008CBA; 
+    border-radius: 5px; 
+"""
+
+# Button 1
+col1.markdown(f'<button style="{button_style}"> 🏞️                         Number of Hectare: 2</button>', unsafe_allow_html=True)
+
+# Button 2
+col2.markdown(f'<button style="{button_style}">🌳🌳 Number of Trees: 1944</button>', unsafe_allow_html=True)
+
+# Button 3
+col3.markdown(f'<button style="{button_style}">🌲 🌴 Number of Species: 380</button>', unsafe_allow_html=True)
+
+
 
 #-------------------------------------------------------------------Number of Trees and SP in each DBH for Year 2019
 
@@ -110,6 +128,105 @@ with col2:
 
     # Display the plot using Streamlit
     st.pyplot(plt)
+#------------------------------------------------------------------------------------AGB and carbon stock in each DBH class
+st.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
+
+import pandas as pd
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+All1521 = pd.read_csv('All1521.csv')
+
+
+All1521['Size Class by Inch'] = All1521['Size Class by Inch'].astype(str)
+
+# Filtering data for the year 2019 and Size Class by Inch not equal to 0 using query
+data_2019 = All1521.query("(Year == 2019) & (`Size Class by Inch` != '0') ")
+
+# Grouping data by 'Size Class by Inch' and calculating AGB and Carbon Stock
+agb_carbon_data = data_2019.groupby('Size Class by Inch').agg({
+    'DBH': 'sum',        # Assuming 'DBH' represents Above-Ground Biomass (AGB)
+    'Carbon': 'sum'      # Assuming 'Carbon' represents Carbon Stock
+}).reset_index()
+
+# Colors for each DBH class size
+colors = sns.color_palette('viridis', n_colors=len(agb_carbon_data['Size Class by Inch']))
+
+# Creating the pie chart for AGB
+plt.figure(figsize=(14, 8))
+plt.pie(agb_carbon_data['DBH'], labels=agb_carbon_data['Size Class by Inch'], colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Above-Ground Biomass (AGB) Distribution by DBH Class (Year 2019)')
+
+# Display the AGB pie chart using Streamlit in column 1
+col1, col2 = st.columns([1, 1])
+with col1:
+    st.subheader('AGB Distribution by DBH Class, Year 2019')
+
+    st.pyplot(plt)
+
+# Creating the pie chart for Carbon Stock
+plt.figure(figsize=(10, 6))
+plt.pie(agb_carbon_data['Carbon'], labels=agb_carbon_data['Size Class by Inch'], colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Carbon Stock Distribution by DBH Class (Year 2019)')
+
+# Display the Carbon Stock pie chart using Streamlit in column 2
+with col2:
+    st.subheader('Carbon Stock Distribution by DBH Class, Year 2019')
+
+    st.pyplot(plt)
+
+#------------------------------------------------------------------------------------Density and basal erea in each DBH class
+
+import pandas as pd
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+All1521 = pd.read_csv('All1521.csv')
+
+
+All1521['Size Class by Inch'] = All1521['Size Class by Inch'].astype(str)
+
+# Filtering data for the year 2019 and Size Class by Inch not equal to 0 using query
+data_2019 = All1521.query("(Year == 2019) & (`Size Class by Inch` != '0') ")
+
+# Grouping data by 'Size Class by Inch' and calculating Density and Basal Area
+density_basal_data = data_2019.groupby('Size Class by Inch').agg({
+    'Density': 'sum',
+    'Basal Area': 'sum'
+}).reset_index()
+
+# Colors for each DBH class size
+colors = sns.color_palette('Set3', n_colors=len(density_basal_data['Size Class by Inch']))
+
+# Creating the pie chart for Density
+plt.figure(figsize=(10, 6))
+plt.pie(density_basal_data['Density'], labels=density_basal_data['Size Class by Inch'], colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Density Distribution by DBH Class (Year 2019)')
+
+# Display the Density pie chart using Streamlit in column 1
+col1, col2 = st.columns([1, 1])
+with col1:
+    st.subheader('Density  Distribution by DBH Class, Year 2019')
+
+    st.pyplot(plt)
+
+# Creating the pie chart for Basal Area
+plt.figure(figsize=(10, 6))
+plt.pie(density_basal_data['Basal Area'], labels=density_basal_data['Size Class by Inch'], colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Basal Area Distribution by DBH Class (Year 2019)')
+
+# Display the Basal Area pie chart using Streamlit in column 2
+with col2:
+    st.subheader('Basal Area Distribution by DBH Class, Year 2019')
+
+    st.pyplot(plt)
+
+
+
 
 #-------------------------------------------------------------------------------------------------Scatter plot location
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
@@ -149,15 +266,88 @@ if selected_species:
 else:
 #--------ta inja pak konam agar nakhastam select box bashe
     mapshow2019(df)
+#----------------------------------------------------------------------------------------------Location plot based on DBH
+
+
+import pandas as pd
+import streamlit as st
+import plotly.graph_objects as go
+
+st.subheader('3D Tree Location by DBH Class, Year 2019')
+
+
+def mapshow_3d_with_line(df, key):
+    fig = go.Figure()
+
+    # Create a mapping of Size Class by Inch to colors
+    df['Size Class by Inch'] = df['Size Class by Inch'].astype('category')  # Convert 'Size Class by Inch' to categorical
+
+    size_class_colors = {'1-5': '#205c40', '6-11': '#76ff7a', '12-17': '#fdfc74', '18-23': '#ff8243', '>24': '#bc5d58'}  # Exclude '0' key
+
+    # Add tree points in 3D scatter plot
+    fig.add_trace(go.Scatter3d(
+        x=df['XCO'], y=df['YCO'], z=df['Height'],
+        mode='markers',
+        marker=dict(color=df['Size Class by Inch'].map(size_class_colors), size=df['Height']),
+        name='Size Class'
+    ))
+
+    # Add lines from each tree to its top based on height
+    for i, row in df.iterrows():
+        fig.add_trace(go.Scatter3d(
+            x=[row['XCO'], row['XCO']],
+            y=[row['YCO'], row['YCO']],
+            z=[0, row['Height']],
+            mode='lines',
+            line=dict(color='#5E4C3E', width=3),
+            showlegend=False
+        ))
+
+
+    fig.update_layout(
+        scene=dict(
+            xaxis_title='XCO Title',
+            yaxis_title='YCO Title',
+            zaxis_title='Tree Height',
+            aspectmode='manual',  # Set aspect ratio manually
+            aspectratio=dict(x=1, y=2, z=0.8),  # Adjust the aspect ratio as needed
+        ),
+        title='3D Tree location by DBH size',
+        width=800,  # Adjust the width of the plot
+        height=800,  # Adjust the height of the plot
+    )
+    # Update layout for larger plot
+
+
+    st.plotly_chart(fig, key=key)
+
+# Load the dataset
+data = pd.read_csv('All1521.csv')
+df = pd.DataFrame(data)
+
+#--------------az inja
+selected_size_class = st.multiselect('Select Size Class to see their location', sorted(df['Size Class by Inch'].unique().tolist()), default=['1-5', '6-11', '12-17', '18-23', '>24'])
+
+if selected_size_class:
+    filtered_df = df[df['Size Class by Inch'].isin(selected_size_class)]
+    mapshow_3d_with_line(filtered_df, key='3d_plot')
+else:
+#--------ta inja pak konam agar nakhastam select box bashe
+    mapshow_3d_with_line(df, key='3d_plot')
+
+
+
+
+
 #---------------------------------------------------------------------------------------------pie chart SP in Hectrae 1 & 2
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
-
 col1, col2 = st.columns([1, 1])
+
 with col1:
-# Load the dataset
+    # Load the dataset
     All1521 = pd.read_csv('All1521.csv')  # Replace 'All1521.csv' with the correct file path
 
     # Title for the web app
@@ -171,24 +361,20 @@ with col1:
     species_count.columns = ['Species', 'TreeCount']
 
     # Selecting top 20 species based on tree count
-    top_20_species = species_count.head(20)
+    top_20_species = species_count.head(10)
 
-    # Creating a pie chart for top 20 species in Hectare 1 for year 2019
+    # Creating a horizontal bar chart for top 20 species in Hectare 1 for year 2019
     plt.figure(figsize=(8, 8))
-    plt.pie(top_20_species['TreeCount'], labels=top_20_species['Species'], autopct='%1.1f%%', startangle=140)
-    plt.title('Hectare 1 , Year 2019')
-    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.barh(top_20_species['Species'], top_20_species['TreeCount'], color='pink')
+    plt.title('Hectare 1, Year 2019')
+    plt.xlabel('Tree Count')
+    plt.ylabel('Species')
     plt.tight_layout()
 
-    # Display the pie chart using Streamlit
+    # Display the horizontal bar chart using Streamlit
     st.pyplot(plt)
 
 with col2:
-
-    import pandas as pd
-    import streamlit as st
-    import matplotlib.pyplot as plt
-
     # Load the dataset
     All1521 = pd.read_csv('All1521.csv')
 
@@ -203,17 +389,19 @@ with col2:
     species_count.columns = ['Species', 'TreeCount']
 
     # Selecting top 20 species based on tree count
-    top_20_species = species_count.head(20)
+    top_20_species = species_count.head(10)
 
-    # Creating a pie chart for top 20 species in Hectare 2 for year 2019
+    # Creating a horizontal bar chart for top 20 species in Hectare 2 for year 2019
     plt.figure(figsize=(8, 8))
-    plt.pie(top_20_species['TreeCount'], labels=top_20_species['Species'], autopct='%1.1f%%', startangle=140)
-    plt.title('Hectare 2 , Year 2019')
-    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.barh(top_20_species['Species'], top_20_species['TreeCount'], color='lightcoral')
+    plt.title('Hectare 2, Year 2019')
+    plt.xlabel('Tree Count')
+    plt.ylabel('Species')
     plt.tight_layout()
 
-    # Display the pie chart using Streamlit
+    # Display the horizontal bar chart using Streamlit
     st.pyplot(plt)
+
 
 #----------------------------------------------------------------------------------------  AGB in Hectrae 1 & 2
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
@@ -256,7 +444,6 @@ with col1:
     st.pyplot(plt)
 #---------------------
 with col2:
-
     import pandas as pd
     import streamlit as st
     import matplotlib.pyplot as plt
@@ -265,7 +452,7 @@ with col2:
     All1521 = pd.read_csv('All1521.csv')  # Replace 'All1521.csv' with the correct file path
 
     # Title for the web app
-    st.subheader('Top 20 Species with most Above-Ground Biomass (AGB) Values')
+    st.subheader('Top 10 Species with most Above-Ground Biomass (AGB) Values, Year 2019')
 
     # Filtering data for the year 2019
     data_2019 = All1521[All1521['Year'] == 2019]
@@ -276,21 +463,27 @@ with col2:
     # Grouping data by 'Species' and calculating total AGB for each species
     species_agb = data_2019.groupby('Species')['AGB'].sum().reset_index()
 
-    # Selecting top 20 species based on total AGB
-    top_20_species_agb = species_agb.nlargest(20, 'AGB')
+    # Sorting species by AGB in descending order
+    species_agb_sorted = species_agb.sort_values(by='AGB', ascending=False)
 
-    # Creating a bar chart for top 20 species by AGB
+    # Selecting top 10 species based on total AGB
+    top_10_species_agb = species_agb_sorted.head(10)
+
+    # Reverse the order of species for plotting
+    top_10_species_agb = top_10_species_agb[::-1]
+
+    # Creating a bar chart for top 10 species by AGB
     plt.figure(figsize=(10, 8))
-    plt.barh(top_20_species_agb['Species'], top_20_species_agb['AGB'], color='skyblue')
+    plt.barh(top_10_species_agb['Species'], top_10_species_agb['AGB'], color='skyblue')
     plt.xlabel('Above-Ground Biomass (AGB)')
     plt.ylabel('Species')
-    plt.title('Top 20 Species by Above-Ground Biomass (AGB) - Year 2019')
+    plt.title('Top 10 Species by Above-Ground Biomass (AGB) - Year 2019')
     plt.tight_layout()
 
     # Display the bar chart using Streamlit
     st.pyplot(plt)
 
-#----------------------------------------------------------------------------------------  AGB in Hectrae 1 & 2
+#----------------------------------------------------------------------------------------  Carbon Stock in Hectrae 1 & 2
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 
 
@@ -333,7 +526,7 @@ with col2:
     All1521 = pd.read_csv('All1521.csv')  # Replace 'All1521.csv' with the correct file path
 
     # Title for the web app
-    st.subheader('Top 20 Species with most Carbon Stock, Year 2019')
+    st.subheader('Top 10 Species with most Carbon Stock, Year 2019')
 
     # Filtering data for the year 2019
     data_2019 = All1521[All1521['Year'] == 2019]
@@ -342,14 +535,14 @@ with col2:
     species_carbon = data_2019.groupby('Species')['Carbon'].sum().reset_index()
 
     # Selecting top 20 species based on total Carbon
-    top_20_species_carbon = species_carbon.nlargest(20, 'Carbon')
+    top_20_species_carbon = species_carbon.nlargest(10, 'Carbon')
 
     # Creating a bar chart for top 20 species by Carbon
     plt.figure(figsize=(10, 8))
     plt.barh(top_20_species_carbon['Species'], top_20_species_carbon['Carbon'], color='orange')
     plt.xlabel('Carbon')
     plt.ylabel('Species')
-    plt.title('Top 20 Species by Carbon Stock - Year 2019')
+    plt.title('Top 10 Species by Carbon Stock - Year 2019')
     plt.tight_layout()
 
     # Display the bar chart using Streamlit
@@ -404,7 +597,7 @@ with col2:
     All1521 = pd.read_csv('All1521.csv')
 
     # Title for the web app
-    st.subheader('Top 20 Species with most IV (Important Value), Year 2019')
+    st.subheader('Top 10 Species with most IV (Important Value), Year 2019')
 
     # Filtering data for the year 2019
     data_2019 = All1521[All1521['Year'] == 2019]
@@ -416,7 +609,7 @@ with col2:
     species_iv = data_2019.groupby('Species')['IV'].sum().reset_index()
 
     # Selecting top 20 species based on total IV
-    top_20_species_iv = species_iv.nlargest(20, 'IV')
+    top_20_species_iv = species_iv.nlargest(10, 'IV')
 
     # Creating a bar chart for top 20 species by IV
     plt.figure(figsize=(10, 8))
@@ -429,6 +622,7 @@ with col2:
     # Display the bar chart using Streamlit
     st.pyplot(plt)
 #-------------------------------------------------------------------------------------Density in each Quaderant
+
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
 
 import pandas as pd
@@ -504,7 +698,7 @@ st.subheader('Top Species with Maximum Lifespan')
 species_max_lifespan = All1521.groupby('Species')['LifeSpan'].max().reset_index()
 
 # Sorting the data to get the top species with the highest maximum lifespan
-top_species_max_lifespan = species_max_lifespan.nlargest(40, 'LifeSpan')
+top_species_max_lifespan = species_max_lifespan.nlargest(20, 'LifeSpan')
 
 # Create a donut chart using Plotly
 fig = px.pie(

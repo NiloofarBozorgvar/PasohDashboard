@@ -67,7 +67,7 @@ display_table_Light()
 #-------------------------------------------------------------------
 
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-st.write(' 📣📣  Here, based on the objective you have, you can see the details of prescription plan ⛑️')
+st.write('Here, based on the objective you have, you can see the details of prescription plan')
 
 #------------------------------------------------------------------------------------------------Objective Table
 
@@ -175,30 +175,417 @@ col1, col2, col3, col4 = st.columns(4)
 
 
 if col1.button('***Diversity*** Objective;and Light regime'):
-    data = pd.read_csv('Prescription stremlit/LDiversity.csv')
-    st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    data = data[['XCO', 'YCO', 'Species']]
-    df = pd.DataFrame(data)
-    species_list = df['Species'].unique().tolist()
-    mapshow2019(df)
+    import pandas as pd
+    import plotly.graph_objects as go
+    import plotly.express as px
+    import streamlit as st
+
+    # Assuming you have loaded the two datasets into pandas DataFrames
+    trees_2019_df = pd.read_csv('Trees_2019.csv')
+    hdiversity_df = pd.read_csv('Prescription stremlit/LDiversity.csv')
+
+    # Merge the two datasets based on the "TAG" column
+    merged_df = pd.merge(trees_2019_df, hdiversity_df[['TAG']], how='left', on='TAG')
+
+    # Create a new column "harvested" with 1 if the "TAG" is present in both datasets, else 0
+    merged_df['harvested'] = merged_df['TAG'].apply(lambda x: 1 if x in hdiversity_df['TAG'].values else 0)
+
+    # Save the resulting DataFrame to HarvestingTrees_2019.csv
+    print(merged_df)
+    merged_df.to_csv('HarvestingTrees_2019.csv', index=False)
+    merged_df['SP_category'] = pd.Categorical(merged_df['Species'])
+    merged_df['SP_code'] = merged_df['SP_category'].cat.codes
+
+
+    def mapshow_3d_with_line_harvested(df, key):
+        fig = go.Figure()
+
+        # Use the color scale from the original map
+        color_scale_original = px.colors.sequential.Viridis
+
+        # Add tree points in 3D scatter plot
+        for i, row in df.iterrows():
+            if row['harvested'] == 1:
+                # Tree is harvested, use black color
+                color = 'black'
+            else:
+                # Tree is not harvested, use color based on species
+                color = color_scale_original[row['SP_code'] % len(color_scale_original)]
+
+            # Add lines from each tree to its top based on height
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO'], row['XCO']], y=[row['YCO'], row['YCO']],
+                z=[0, row['Height']],
+                mode='lines',
+                line=dict(color='#5E4C3E', width=3),
+                showlegend=False
+            ))
+
+            # Add scatter points for the tree tops with transparency
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO']],
+                y=[row['YCO']],
+                z=[row['Height']],
+                mode='markers',
+                marker=dict(
+                    color=color,
+                    size=18,  # Adjust the size of the markers
+                    opacity=0.8,  # Adjust the opacity (transparency)
+                    line=dict(
+                        color='#ffffff',  # Set the border color to black
+                        width=1  # Adjust the border width
+                    )
+                ),
+                showlegend=False
+            ))
+
+        # Update layout for larger plot with rectangular aspect ratio
+        fig.update_layout(
+            scene=dict(
+                xaxis_title='XCO Title',
+                yaxis_title='YCO Title',
+                zaxis_title='Tree Height',
+                aspectmode='manual',  # Set aspect ratio manually
+                aspectratio=dict(x=1, y=2.3, z=0.8),  # Adjust the aspect ratio as needed
+            ),
+            title='3D representation of Trees that should be harvested using Harvesting Plan in (black color)',
+            width=800,  # Adjust the width of the plot
+            height=800,  # Adjust the height of the plot
+        )
+
+        st.plotly_chart(fig, key=key)
+
+
+    # Display the 3D plot with harvested trees
+    mapshow_3d_with_line_harvested(merged_df, key='unique_chart3')
+
+    # -------------------------------------------------------------------------------------remaining trees
+    import pandas as pd
+    import plotly.graph_objects as go
+    import plotly.express as px
+    import streamlit as st
+
+    # Assuming you have loaded the two datasets into pandas DataFrames
+    trees_2019_df = pd.read_csv('Trees_2019.csv')
+    hdiversity_df = pd.read_csv('Prescription stremlit/MDiversity.csv')
+
+    # Merge the two datasets based on the "TAG" column
+    merged_df = pd.merge(trees_2019_df, hdiversity_df[['TAG']], how='left', on='TAG')
+
+    # Create a new column "harvested" with 1 if the "TAG" is present in both datasets, else 0
+    merged_df['harvested'] = merged_df['TAG'].apply(lambda x: 1 if x in hdiversity_df['TAG'].values else 0)
+
+    # Save the resulting DataFrame to HarvestingTrees_2019.csv
+    print(merged_df)
+    merged_df.to_csv('HarvestingTrees_2019.csv', index=False)
+    merged_df['SP_category'] = pd.Categorical(merged_df['Species'])
+    merged_df['SP_code'] = merged_df['SP_category'].cat.codes
+
+
+    def mapshow_3d_with_line_harvested(df, key):
+        fig = go.Figure()
+
+        # Use the color scale from the original map
+        color_scale_original = px.colors.sequential.Viridis
+
+        # Add tree points in 3D scatter plot
+        for i, row in df.iterrows():
+            if row['harvested'] == 1:
+                # Tree is harvested, use black color
+                color = 'black'
+            else:
+                # Tree is not harvested, use color based on species
+                color = color_scale_original[row['SP_code'] % len(color_scale_original)]
+
+            # Add lines from each tree to its top based on height
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO'], row['XCO']], y=[row['YCO'], row['YCO']],
+                z=[0, row['Height']],
+                mode='lines',
+                line=dict(color='#5E4C3E', width=3),
+                showlegend=False
+            ))
+
+            # Add scatter points for the tree tops with transparency
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO']],
+                y=[row['YCO']],
+                z=[row['Height']],
+                mode='markers',
+                marker=dict(
+                    color=color,
+                    size=18,  # Adjust the size of the markers
+                    opacity=0.8,  # Adjust the opacity (transparency)
+                    line=dict(
+                        color='#ffffff',  # Set the border color to black
+                        width=1  # Adjust the border width
+                    )
+                ),
+                showlegend=False
+            ))
+
+        # Update layout for larger plot with rectangular aspect ratio
+        fig.update_layout(
+            scene=dict(
+                xaxis_title='XCO Title',
+                yaxis_title='YCO Title',
+                zaxis_title='Tree Height',
+                aspectmode='manual',  # Set aspect ratio manually
+                aspectratio=dict(x=1, y=2.3, z=0.8),  # Adjust the aspect ratio as needed
+            ),
+            title='3D representation of remaining trees after harvesting',
+            width=800,  # Adjust the width of the plot
+            height=800,  # Adjust the height of the plot
+        )
+        st.plotly_chart(fig, key=key)
+
+
+    # Display the 3D plot with harvested trees
+    merged_df_harvested = merged_df[merged_df['harvested'] == 0]
+    mapshow_3d_with_line_harvested(merged_df_harvested, key='unique_chart3')
 
 if col2.button('***Species-based*** Objective; Light regime'):
-    data = pd.read_csv('Prescription stremlit/LSpices.csv')
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    data = data[['XCO', 'YCO', 'Species']]
-    df = pd.DataFrame(data)
-    species_list = df['Species'].unique().tolist()
-    df = df.drop(index=17)
-    mapshow2019(df)
+
+    import pandas as pd
+    import plotly.graph_objects as go
+    import plotly.express as px
+    import streamlit as st
+
+    # Assuming you have loaded the two datasets into pandas DataFrames
+    trees_2019_df = pd.read_csv('Trees_2019.csv')
+    hdiversity_df = pd.read_csv('Prescription stremlit/LSpices.csv')
+
+    # Merge the two datasets based on the "TAG" column
+    merged_df = pd.merge(trees_2019_df, hdiversity_df[['TAG']], how='left', on='TAG')
+
+    # Create a new column "harvested" with 1 if the "TAG" is present in both datasets, else 0
+    merged_df['harvested'] = merged_df['TAG'].apply(lambda x: 1 if x in hdiversity_df['TAG'].values else 0)
+
+    # Save the resulting DataFrame to HarvestingTrees_2019.csv
+    print(merged_df)
+    merged_df.to_csv('HarvestingTrees_2019.csv', index=False)
+    merged_df['SP_category'] = pd.Categorical(merged_df['Species'])
+    merged_df['SP_code'] = merged_df['SP_category'].cat.codes
+    merged_df = merged_df.drop(index=14)
+
+
+    def mapshow_3d_with_line_harvested(df, key):
+        fig = go.Figure()
+
+        # Use the color scale from the original map
+        color_scale_original = px.colors.sequential.Viridis
+
+        # Add tree points in 3D scatter plot
+        for i, row in df.iterrows():
+            if row['harvested'] == 1:
+                # Tree is harvested, use black color
+                color = 'black'
+            else:
+                # Tree is not harvested, use color based on species
+                color = color_scale_original[row['SP_code'] % len(color_scale_original)]
+
+            # Add lines from each tree to its top based on height
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO'], row['XCO']], y=[row['YCO'], row['YCO']],
+                z=[0, row['Height']],
+                mode='lines',
+                line=dict(color='#5E4C3E', width=3),
+                showlegend=False
+            ))
+
+            # Add scatter points for the tree tops with transparency
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO']],
+                y=[row['YCO']],
+                z=[row['Height']],
+                mode='markers',
+                marker=dict(
+                    color=color,
+                    size=18,  # Adjust the size of the markers
+                    opacity=0.8,  # Adjust the opacity (transparency)
+                    line=dict(
+                        color='#ffffff',  # Set the border color to black
+                        width=1  # Adjust the border width
+                    )
+                ),
+                showlegend=False
+            ))
+
+        # Update layout for larger plot with rectangular aspect ratio
+        fig.update_layout(
+            scene=dict(
+                xaxis_title='XCO Title',
+                yaxis_title='YCO Title',
+                zaxis_title='Tree Height',
+                aspectmode='manual',  # Set aspect ratio manually
+                aspectratio=dict(x=1, y=2.3, z=0.8),  # Adjust the aspect ratio as needed
+            ),
+            title='3D representation of Trees that should be harvested using Harvesting Plan in (black color)',
+            width=800,  # Adjust the width of the plot
+            height=800,  # Adjust the height of the plot
+        )
+
+        st.plotly_chart(fig, key=key)
+
+
+    # Display the 3D plot with harvested trees
+    mapshow_3d_with_line_harvested(merged_df, key='unique_chart3')
+
+
+    # -------------------------------------------------------------------------------------remaining trees
+
+    def mapshow_3d_with_line_harvested(df, key):
+        fig = go.Figure()
+
+        # Use the color scale from the original map
+        color_scale_original = px.colors.sequential.Viridis
+
+        # Add tree points in 3D scatter plot
+        for i, row in df.iterrows():
+            if row['harvested'] == 1:
+                # Tree is harvested, use black color
+                color = 'black'
+            else:
+                # Tree is not harvested, use color based on species
+                color = color_scale_original[row['SP_code'] % len(color_scale_original)]
+
+            # Add lines from each tree to its top based on height
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO'], row['XCO']], y=[row['YCO'], row['YCO']],
+                z=[0, row['Height']],
+                mode='lines',
+                line=dict(color='#5E4C3E', width=3),
+                showlegend=False
+            ))
+
+            # Add scatter points for the tree tops with transparency
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO']],
+                y=[row['YCO']],
+                z=[row['Height']],
+                mode='markers',
+                marker=dict(
+                    color=color,
+                    size=18,  # Adjust the size of the markers
+                    opacity=0.8,  # Adjust the opacity (transparency)
+                    line=dict(
+                        color='#ffffff',  # Set the border color to black
+                        width=1  # Adjust the border width
+                    )
+                ),
+                showlegend=False
+            ))
+
+        # Update layout for larger plot with rectangular aspect ratio
+        fig.update_layout(
+            scene=dict(
+                xaxis_title='XCO Title',
+                yaxis_title='YCO Title',
+                zaxis_title='Tree Height',
+                aspectmode='manual',  # Set aspect ratio manually
+                aspectratio=dict(x=1, y=2.3, z=0.8),  # Adjust the aspect ratio as needed
+            ),
+            title='3D representation of remaining trees after harvesting',
+            width=800,  # Adjust the width of the plot
+            height=800,  # Adjust the height of the plot
+        )
+        st.plotly_chart(fig, key=key)
+
+
+    # Display the 3D plot with harvested trees
+    merged_df_harvested = merged_df[merged_df['harvested'] == 0]
+    mapshow_3d_with_line_harvested(merged_df_harvested, key='unique_chart3')
+########################################################################################################################
+
 
 if col3.button('***Dominance*** Objective; Light regime'):
-    data = pd.read_csv('Prescription stremlit/LDominance.csv')
     st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-    data = data[['XCO', 'YCO', 'Species']]
-    df = pd.DataFrame(data)
-    species_list = df['Species'].unique().tolist()
-    df = df.drop(index=24)
-    mapshow2019(df)
+
+    import pandas as pd
+    import plotly.graph_objects as go
+    import plotly.express as px
+    import streamlit as st
+
+    # Assuming you have loaded the two datasets into pandas DataFrames
+    trees_2019_df = pd.read_csv('Trees_2019.csv')
+    hdiversity_df = pd.read_csv('Prescription stremlit/LDominance.csv')
+
+    # Merge the two datasets based on the "TAG" column
+    merged_df = pd.merge(trees_2019_df, hdiversity_df[['TAG']], how='left', on='TAG')
+
+    # Create a new column "harvested" with 1 if the "TAG" is present in both datasets, else 0
+    merged_df['harvested'] = merged_df['TAG'].apply(lambda x: 1 if x in hdiversity_df['TAG'].values else 0)
+
+    # Save the resulting DataFrame to HarvestingTrees_2019.csv
+    print(merged_df)
+    merged_df.to_csv('HarvestingTrees_2019.csv', index=False)
+    merged_df['SP_category'] = pd.Categorical(merged_df['Species'])
+    merged_df['SP_code'] = merged_df['SP_category'].cat.codes
+    merged_df2 = merged_df.drop(index=20)
+
+
+    def mapshow_3d_with_line_harvested(df, key):
+        fig = go.Figure()
+
+        # Use the color scale from the original map
+        color_scale_original = px.colors.sequential.Viridis
+
+        # Add tree points in 3D scatter plot
+        for i, row in df.iterrows():
+            if row['harvested'] == 1:
+                # Tree is harvested, use black color
+                color = 'black'
+            else:
+                # Tree is not harvested, use color based on species
+                color = color_scale_original[row['SP_code'] % len(color_scale_original)]
+
+            # Add lines from each tree to its top based on height
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO'], row['XCO']], y=[row['YCO'], row['YCO']],
+                z=[0, row['Height']],
+                mode='lines',
+                line=dict(color='#5E4C3E', width=3),
+                showlegend=False
+            ))
+
+            # Add scatter points for the tree tops with transparency
+            fig.add_trace(go.Scatter3d(
+                x=[row['XCO']],
+                y=[row['YCO']],
+                z=[row['Height']],
+                mode='markers',
+                marker=dict(
+                    color=color,
+                    size=18,  # Adjust the size of the markers
+                    opacity=0.8,  # Adjust the opacity (transparency)
+                    line=dict(
+                        color='#ffffff',  # Set the border color to black
+                        width=1  # Adjust the border width
+                    )
+                ),
+                showlegend=False
+            ))
+
+        # Update layout for larger plot with rectangular aspect ratio
+        fig.update_layout(
+            scene=dict(
+                xaxis_title='XCO Title',
+                yaxis_title='YCO Title',
+                zaxis_title='Tree Height',
+                aspectmode='manual',  # Set aspect ratio manually
+                aspectratio=dict(x=1, y=2.3, z=0.8),  # Adjust the aspect ratio as needed
+            ),
+            title='3D representation of Trees that should be harvested using Harvesting Plan in (black color)',
+            width=800,  # Adjust the width of the plot
+            height=800,  # Adjust the height of the plot
+        )
+
+        st.plotly_chart(fig, key=key)
+
+
+    # Display the 3D plot with harvested trees
+    mapshow_3d_with_line_harvested(merged_df2, key='unique_chart3')
 
 if col4.button('***Economical*** Objective; Light regime'):
     st.write('No Data Available Yet!')
