@@ -900,7 +900,7 @@ if col1.button('***Heavy regime-Diversity*** implications'):
 
 
     # Display the DataFrame (optional)
-if col2.button('***Heavy regime-Species*** implications'):
+if col2.button('***Heavy regime-Species based*** implications'):
     col11, col12 = st.columns(2)
     col13, col14 = st.columns(2)
 
