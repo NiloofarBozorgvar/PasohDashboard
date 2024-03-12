@@ -53,7 +53,7 @@ def display_table_heavy():
         <tbody>
             <tr>
                 <td style="font-size: 14px; color: #423025; padding: 12px; border-bottom: 3px solid #ddd; border-right: 3px solid #ddd; border-left: 3px solid #ddd;">BDq Heavy regime</td>
-                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">742</td>
+                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">385</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">7175435</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">742169</td>
             </tr>
@@ -94,46 +94,46 @@ def display_table_objective():
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Diversity Objective</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">308</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">37</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">98</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">382</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">187</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">77</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">209</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">39</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">440.73</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">334.63</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">9.07M</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Species-Based Objective</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">320</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">37</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">104</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">379</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">184</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">308</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">77</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">209</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">39</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">432.92</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">341.51</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">9M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Dominance Objective</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">288</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">37</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">102</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">380</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">185</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">308</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">77</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">209</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">39</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">456.01</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">360.08</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">9.1M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Economical Objective</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -168,7 +168,8 @@ def mapshow2019(df):
     st.plotly_chart(fig)
 
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-st.write(' 🔔 Now by chossing buttons below 👇, you will se the 📍location of trees than need to be harvest base on your Objective.')
+st.write(' 🔔 Now by Choosing buttons below 👇, you will see the 📍location of trees that need to be harvested base on your Objective.')
+
 
 st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
 
@@ -435,6 +436,8 @@ if col2.button('***Species-based*** Objective; Heavy regime'):
     # Display the 3D plot with harvested trees
     mapshow_3d_with_line_harvested(merged_df, key='unique_chart3')
 
+
+
     # -------------------------------------------------------------------------------------remaining trees
 
     def mapshow_3d_with_line_harvested(df, key):
@@ -676,4 +679,574 @@ r_h_diversity = trees_2019[~trees_2019['TAG'].isin(h_diversity['TAG'])]
 # Write the resulting DataFrame to a new CSV file
 r_h_diversity.to_csv('RHDiversity.csv', index=False)
 
-#*****************************************************************************
+#-----------------------------------------------------------------------------------------See effects graph
+data = {
+    'Objective': ['Diversity', 'Diversity', 'Diversity', 'Species-based', 'Species-based', 'Species-based', 'Dominance',
+                  'Dominance', 'Dominance'],
+    'Regime': ['heavy', 'medium', 'light', 'heavy', 'medium', 'light', 'heavy', 'medium', 'light'],
+    'Carbon Loss': [9.07, 11.71, 13.67, 9, 11.80, 14.01, 9.1, 11.66, 13.66],
+    'Predicted Carbon Loss(M) in 2055 after harvesting': [8.71, 9.71, 11.67, 7, 8.80, 10.01, 7.1, 8.66, 10.66]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Sort the DataFrame by Carbon Loss
+df_sorted = df.sort_values(by='Carbon Loss')
+
+# Find the row index with the smallest Carbon Loss
+min_index = df_sorted['Carbon Loss'].idxmin()
+
+
+# Define a function to generate color-coded HTML for each row
+def generate_row_html(row):
+    if row['Carbon Loss'] < 10:
+        row_color = 'background-color: #90EE90;'  # Green
+    elif 10 <= row['Carbon Loss'] <= 12:
+        row_color = 'background-color: #FFFF99;'  # Yellow
+    else:
+        row_color = 'background-color: #FF9999;'  # Red
+
+    return f"""<tr style="{row_color}">
+            <td>{row['Objective']}</td>
+            <td>{row['Regime']}</td>
+            <td>{row['Carbon Loss']}</td>
+            <td>{row['Predicted Carbon Loss(M) in 2055 after harvesting']}</td>
+        </tr>"""
+
+
+# Generate HTML code for the table with color-coding
+html_code = """<table><tr>
+            <th>Objective</th>
+            <th>Regime</th>
+            <th>Carbon Loss(M)</th>
+            <th>Predicted Carbon Loss(M) in 2055 after harvesting</th>
+        </tr>"""
+
+# Iterate through rows to create HTML table rows with color-coding
+for index, row in df_sorted.iterrows():
+    html_code += generate_row_html(row)
+
+html_code += "</table>"
+
+
+st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+
+# Streamlit app
+st.markdown("<h3>🎯 🎯 Rating of different harvesting plans (Objectives and Regimes) based on Carbon Loss</h3>", unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns(3)
+# Display HTML code in a Markdown block
+st.markdown(html_code, unsafe_allow_html=True)
+
+
+#----------------------------------------------------------------------------------------- showin the table
+st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+st.write(' 🔔 Now by choosing buttons below 👇, you will see the ⁉️implications of each objective in the forest.')
+
+st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+
+col1, col2, col3, col4 = st.columns(4)
+
+
+if col1.button('***Heavy regime-Diversity*** implications'):
+    st.markdown("<div style='height: 20px;'></div>", unsafe_allow_html=True)
+
+    col11,col12 =st.columns(2)
+    col13,col14 =st.columns(2)
+
+    with col11:
+        import pandas as pd
+        import matplotlib.pyplot as plt
+
+        # Read the CSV file
+        df = pd.read_csv('Prediction/DBHPrediction2055.csv')
+        # Remove 385 rows randomly
+        num_rows_to_remove = 385
+        rows_to_remove = df.sample(num_rows_to_remove).index
+        df = df.drop(rows_to_remove)
+        # Extract relevant columns for the years D2021 to D2055
+        years_columns = ['D2021','D2023','D2025','D2027','D2029','D2031','D2033','D2035','D2037','D2039','D2041','D2043','D2045','D2047','D2049','D2051','D2053','D2055']
+        data_years = df[years_columns]
+
+        # Calculate the average for each year
+        average_per_year = data_years.mean()
+        #st.line_chart(average_per_year)
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Avrage DBH")
+        ax.plot(years_columns, average_per_year, marker='o', label="Overall Diversity Trend")
+        ax.set_xticklabels(years_columns, rotation=90, ha='center')  # Rotate x-axis labels vertically
+        st.markdown("<h3>DBH </h3>", unsafe_allow_html=True)
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col12:
+        forest_data=df
+
+        # Drop rows where DBH is 0 (indicating dead trees)
+        def shannon_wiener_index(counts):
+            proportions = counts / counts.sum()
+            return -sum(proportions * np.log(proportions))
+
+
+        # Streamlit app
+        st.markdown("<h3>Diversity</h3>", unsafe_allow_html=True)
+
+        # Plot diversity trend for all species
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Diversity Index")
+
+        # Iterate over each day and calculate overall diversity
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041', 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        overall_diversity_values = []
+
+        for year in years:
+            # Select rows where DBH is greater than zero for the current year
+            valid_trees = forest_data[forest_data[year] > 0]
+
+            # Calculate overall diversity for the current year
+            species_counts = valid_trees['SP'].value_counts()
+            diversity_index = shannon_wiener_index(species_counts)
+            overall_diversity_values.append(diversity_index)
+
+        ax.plot(years, overall_diversity_values, marker='o', label="Overall Diversity Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+
+    with col13:
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        # Streamlit app
+        st.markdown("<h3>Biomass (AGB)</h3>", unsafe_allow_html=True)
+
+        # Plot AGB trend for all years
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Aboveground Biomass (AGB)")
+
+        # Iterate over each day and calculate AGB
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041', 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        agb_values = []
+
+        for year in years:
+            valid_trees = forest_data[forest_data[year] > 0]
+            agb = valid_trees[year].apply(calculate_agb).sum()
+            agb_values.append(agb)
+
+        # Plot the AGB trend
+        ax.plot(years, agb_values, marker='s', label="AGB Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col14:
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        # Define a generic carbon content factor (replace with species-specific factors if available)
+        carbon_content_factor = 0.5  # Example: 50% carbon content
+
+        # Streamlit app
+        st.markdown("<h3>Carbon Stock</h3>", unsafe_allow_html=True)
+
+        # Plot Carbon Stock trend for all years
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Carbon Stock (Mg C/ha)")
+
+        # Iterate over each day and calculate Carbon Stock
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041', 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        carbon_stock_values = []
+
+        for year in years:
+            valid_trees = forest_data[forest_data[year] > 0]
+            agb = valid_trees[ year].apply(calculate_agb).sum()
+            carbon_stock = agb * carbon_content_factor
+            carbon_stock_values.append(carbon_stock)
+
+        # Plot the Carbon Stock trend
+        ax.plot(years, carbon_stock_values, marker='s', label="Carbon Stock Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+
+
+    # Display the DataFrame (optional)
+if col2.button('***Heavy regime-Species*** implications'):
+    col11, col12 = st.columns(2)
+    col13, col14 = st.columns(2)
+
+    with col11:
+        import pandas as pd
+        import matplotlib.pyplot as plt
+
+        # Read the CSV file
+        df = pd.read_csv('Prediction/DBHPrediction2055.csv')
+        # Remove 385 rows randomly
+        num_rows_to_remove = 385
+        rows_to_remove = df.sample(num_rows_to_remove).index
+        df = df.drop(rows_to_remove)
+        # Extract relevant columns for the years D2021 to D2055
+        years_columns = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039',
+                         'D2041', 'D2043', 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        data_years = df[years_columns]
+
+        # Calculate the average for each year
+        average_per_year = data_years.mean()
+        # st.line_chart(average_per_year)
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Avrage DBH")
+        ax.plot(years_columns, average_per_year, marker='o', label="Overall Diversity Trend")
+        ax.set_xticklabels(years_columns, rotation=90, ha='center')  # Rotate x-axis labels vertically
+        st.markdown("<h3>DBH </h3>", unsafe_allow_html=True)
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col12:
+        forest_data = df
+
+
+        # Drop rows where DBH is 0 (indicating dead trees)
+        def shannon_wiener_index(counts):
+            proportions = counts / counts.sum()
+            return -sum(proportions * np.log(proportions))
+
+
+        # Streamlit app
+        st.markdown("<h3>Diversity</h3>", unsafe_allow_html=True)
+
+        # Plot diversity trend for all species
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Diversity Index")
+
+        # Iterate over each day and calculate overall diversity
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041',
+                 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        overall_diversity_values = []
+
+        for year in years:
+            # Select rows where DBH is greater than zero for the current year
+            valid_trees = forest_data[forest_data[year] > 0]
+
+            # Calculate overall diversity for the current year
+            species_counts = valid_trees['SP'].value_counts()
+            diversity_index = shannon_wiener_index(species_counts)
+            overall_diversity_values.append(diversity_index)
+
+        ax.plot(years, overall_diversity_values, marker='o', label="Overall Diversity Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col13:
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        # Streamlit app
+        st.markdown("<h3>Biomass (AGB)</h3>", unsafe_allow_html=True)
+
+        # Plot AGB trend for all years
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Aboveground Biomass (AGB)")
+
+        # Iterate over each day and calculate AGB
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041',
+                 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        agb_values = []
+
+        for year in years:
+            valid_trees = forest_data[forest_data[year] > 0]
+            agb = valid_trees[year].apply(calculate_agb).sum()
+            agb_values.append(agb)
+
+        # Plot the AGB trend
+        ax.plot(years, agb_values, marker='s', label="AGB Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col14:
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        # Define a generic carbon content factor (replace with species-specific factors if available)
+        carbon_content_factor = 0.5  # Example: 50% carbon content
+
+        # Streamlit app
+        st.markdown("<h3>Carbon Stock</h3>", unsafe_allow_html=True)
+
+        # Plot Carbon Stock trend for all years
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Carbon Stock (Mg C/ha)")
+
+        # Iterate over each day and calculate Carbon Stock
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041',
+                 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        carbon_stock_values = []
+
+        for year in years:
+            valid_trees = forest_data[forest_data[year] > 0]
+            agb = valid_trees[year].apply(calculate_agb).sum()
+            carbon_stock = agb * carbon_content_factor
+            carbon_stock_values.append(carbon_stock)
+
+        # Plot the Carbon Stock trend
+        ax.plot(years, carbon_stock_values, marker='s', label="Carbon Stock Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+if col3.button('***Heavy regime-Dominance*** implications'):
+    col11, col12 = st.columns(2)
+    col13, col14 = st.columns(2)
+
+    with col11:
+        import pandas as pd
+        import matplotlib.pyplot as plt
+
+        # Read the CSV file
+        df = pd.read_csv('Prediction/DBHPrediction2055.csv')
+        # Remove 385 rows randomly
+        num_rows_to_remove = 385
+        rows_to_remove = df.sample(num_rows_to_remove).index
+        df = df.drop(rows_to_remove)
+        # Extract relevant columns for the years D2021 to D2055
+        years_columns = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039',
+                         'D2041', 'D2043', 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        data_years = df[years_columns]
+
+        # Calculate the average for each year
+        average_per_year = data_years.mean()
+        # st.line_chart(average_per_year)
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Avrage DBH")
+        ax.plot(years_columns, average_per_year, marker='o', label="Overall Diversity Trend")
+        ax.set_xticklabels(years_columns, rotation=90, ha='center')  # Rotate x-axis labels vertically
+        st.markdown("<h3>DBH </h3>", unsafe_allow_html=True)
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col12:
+        forest_data = df
+
+
+        # Drop rows where DBH is 0 (indicating dead trees)
+        def shannon_wiener_index(counts):
+            proportions = counts / counts.sum()
+            return -sum(proportions * np.log(proportions))
+
+
+        # Streamlit app
+        st.markdown("<h3>Diversity</h3>", unsafe_allow_html=True)
+
+        # Plot diversity trend for all species
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Diversity Index")
+
+        # Iterate over each day and calculate overall diversity
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041',
+                 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        overall_diversity_values = []
+
+        for year in years:
+            # Select rows where DBH is greater than zero for the current year
+            valid_trees = forest_data[forest_data[year] > 0]
+
+            # Calculate overall diversity for the current year
+            species_counts = valid_trees['SP'].value_counts()
+            diversity_index = shannon_wiener_index(species_counts)
+            overall_diversity_values.append(diversity_index)
+
+        ax.plot(years, overall_diversity_values, marker='o', label="Overall Diversity Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col13:
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        # Streamlit app
+        st.markdown("<h3>Biomass (AGB)</h3>", unsafe_allow_html=True)
+
+        # Plot AGB trend for all years
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Aboveground Biomass (AGB)")
+
+        # Iterate over each day and calculate AGB
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041',
+                 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        agb_values = []
+
+        for year in years:
+            valid_trees = forest_data[forest_data[year] > 0]
+            agb = valid_trees[year].apply(calculate_agb).sum()
+            agb_values.append(agb)
+
+        # Plot the AGB trend
+        ax.plot(years, agb_values, marker='s', label="AGB Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+    with col14:
+        def calculate_agb(dbh):
+            # Example: AGB = a * (DBH ** b)
+            a = 0.2  # Replace with appropriate coefficient
+            b = 2.0  # Replace with appropriate exponent
+            return a * (dbh ** b)
+
+
+        # Define a generic carbon content factor (replace with species-specific factors if available)
+        carbon_content_factor = 0.5  # Example: 50% carbon content
+
+        # Streamlit app
+        st.markdown("<h3>Carbon Stock</h3>", unsafe_allow_html=True)
+
+        # Plot Carbon Stock trend for all years
+        fig, ax = plt.subplots()
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Carbon Stock (Mg C/ha)")
+
+        # Iterate over each day and calculate Carbon Stock
+        years = ['D2021', 'D2023', 'D2025', 'D2027', 'D2029', 'D2031', 'D2033', 'D2035', 'D2037', 'D2039', 'D2041',
+                 'D2043',
+                 'D2045', 'D2047', 'D2049', 'D2051', 'D2053', 'D2055']
+        carbon_stock_values = []
+
+        for year in years:
+            valid_trees = forest_data[forest_data[year] > 0]
+            agb = valid_trees[year].apply(calculate_agb).sum()
+            carbon_stock = agb * carbon_content_factor
+            carbon_stock_values.append(carbon_stock)
+
+        # Plot the Carbon Stock trend
+        ax.plot(years, carbon_stock_values, marker='s', label="Carbon Stock Trend")
+        ax.set_xticklabels(years, rotation=90, ha='center')  # Rotate x-axis labels vertically
+
+        # Display the chart
+        st.pyplot(fig)
+
+if col4.button('***Heavy regime-Economical*** implications'):
+    st.markdown("<div style='height: 20px;'></div>", unsafe_allow_html=True)
+    st.write('No information available yet! ')
+
+
+
+
+
+
+
+
+
+
+
+
+
+#*****************************************************************************                Scoring
+st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
+
+
+import pandas as pd
+import streamlit as st
+
+# Sample data loading (replace this with your actual data loading)
+hresult_df = pd.read_csv("Result-Heavy.csv")
+
+# Filter the data based on the Score
+top_scored = hresult_df[hresult_df['Score'] == 3]
+medium_scored = hresult_df[hresult_df['Score'] == 2]
+low_scored = hresult_df[hresult_df['Score'] == 1]
+
+# Streamlit app
+st.title("Tree Harvesting Scoring")
+st.write(' 🔔 Now in tables below 👇, you will see the Scored trees to be harvested.')
+st.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
+
+# Display tables side by side
+col1, col2, col3 = st.columns(3)
+
+# Table for top-scored trees
+col1.subheader("Top Scored Trees (Score 3)")
+col1.write(top_scored[['TAG', 'XCO', 'YCO', 'Hectare', 'Score']])
+
+# Table for medium-scored trees
+col2.subheader("Medium Scored Trees (Score 2)")
+col2.write(medium_scored[['TAG', 'XCO', 'YCO', 'Hectare', 'Score']])
+
+# Table for low-scored trees
+col3.subheader("Low Scored Trees (Score 1)")
+col3.write(low_scored[['TAG', 'XCO', 'YCO', 'Hectare', 'Score']])

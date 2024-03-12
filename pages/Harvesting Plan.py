@@ -163,37 +163,37 @@ def display_custom_table_objective_Diversity():
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">308</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">37</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">98</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">382</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">187</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">77</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">209</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">39</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">440.73</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">334.63</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">9.07M</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">72</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">342</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">30</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">62</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">24</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">10</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">25</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">19</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1653.80</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1255.66</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">11.71M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">34</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">361</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">4</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">20</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">12</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">2</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1930.84</td>
@@ -228,36 +228,36 @@ def display_custom_table_objective_species():
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">320</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">37</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">104</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">379</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">184</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">77</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">209</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">39</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">432.92</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">341.51</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">9M</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">72</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">348</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">60</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">24</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">10</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">25</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">19</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1698.20</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1301.42</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">11.80M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">34</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">358</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">26</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">4</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">20</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">12</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">2</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
@@ -291,37 +291,37 @@ def display_custom_table_objective_dominance():
         <tbody>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Heavy Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">742</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">385</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">288</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">37</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">102</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">380</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">185</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">77</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">209</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">39</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">456.01</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">360.08</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">9.1M</td>
             </tr>
             <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Meduim Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">164</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">72</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">342</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">38</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">64</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">22</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">8</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">25</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">19</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">28</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1586.80</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1282.21</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">11.66M</td>
             </tr>
                 <tr style="text-align: left; font-size: 14px;">
                 <td style="padding: 8px; border-right: 3px solid #ddd; border-left: 3px solid #ddd; border-bottom: 3px solid #ddd;">Light Regime</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">32</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">34</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">362</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">29</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">3</td>
-                <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">20</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">12</td>
+                <td style="padding: 8px; border-right: 1px solid #ddd;">2</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">-</td>
                 <td style="padding: 8px; border-right: 1px solid #ddd;">1931.08</td>
@@ -364,7 +364,7 @@ import pandas as pd
 
 datatable = {
     'Plan ID': ['Plan 1: BDq Heavy regime', 'Plan 2: BDq Medium regime', 'Plan 3: BDq Light regime'],
-    '#trees to harvest': [742, 164, 32],
+    '#trees to harvest': [385, 72, 33],
     'Carbon loss': [7175435, 1379174, 298168],
     'Economic value': [742169, 532467, 149835]
 }
@@ -425,19 +425,19 @@ html = f"""
         <tbody>
             <tr>
                 <td style="font-size: 14px; color: #423025; padding: 12px; border-bottom: 3px solid #ddd; border-right: 3px solid #ddd; border-left: 3px solid #ddd;">Plan 1: BDq Heavy regime</td>
-                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">742</td>
+                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">385</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">7175435</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">742169</td>
             </tr>
             <tr>
                 <td style="font-size: 14px; color: #423025; padding: 12px; border-bottom: 3px solid #ddd; border-right: 3px solid #ddd; border-left: 3px solid #ddd;">Plan 1: BDq Medium regime</td>
-                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">164</td>
+                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">72</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">1379174</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">532467</td>
             </tr>
             <tr>
                 <td style="font-size: 14px; color: #423025; padding: 12px; border-bottom: 3px solid #ddd; border-right: 3px solid #ddd; border-left: 3px solid #ddd;">Plan 1: BDq Light regime</td>
-                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">32</td>
+                <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">34</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">298168</td>
                 <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">149835</td>
             </tr>

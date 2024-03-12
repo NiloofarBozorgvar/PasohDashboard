@@ -17,7 +17,9 @@ show_pages(
         Page("pages/4.🌲Harvesting Plan: Heavy.py", "Harvesting Plan: Heavy", "🌲"),
         Page("pages/5.🌳Harvesting Plan: Medium.py", "Harvesting Plan: Medium", "🌳"),
         Page("pages/6.🌴Harvesting Plan: Light.py", "Harvesting Plan: Light", "🌴"),
+        Page("pages/7.📊Simulation.py" , "Simulation" , "📊"),
         Page("pages/Harvesting Plan.py", "Harvesting Plan", "")
+
     ]
 )
 #-----------------------------------------------------------------------------------------------bar chart function 2019
