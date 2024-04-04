@@ -9,7 +9,7 @@ import numpy as np
 # Sample data
 data = {
     'Species': ['Oak', 'Pine', 'Maple', 'Birch', 'Spruce'],
-    'D2021': [30, 25, 20, 18, 22]
+    'D2019': [30, 25, 20, 18, 22]
 }
 
 # Create DataFrame
@@ -19,10 +19,11 @@ df = pd.DataFrame(data)
 st.title("Harvest Simulation")
 
 # Select the year (only 2021)
-selected_year = st.selectbox("Select the Year", [2021])
+selected_year = st.selectbox("Select the Year", [2019])
+selected_ml = st.selectbox("Select the Machine Learning Model", ['SVMOptimal' , 'SVMV1' ,'SVMV2' , 'GRUV1'])
 
 # Select the number of trees to harvest using a slider
-total_trees_2021 = df[f'D{selected_year}'].sum()
+total_trees_2021 = df[f'D2019'].sum()
 max_slider_value = min(total_trees_2021, 390)  # Ensure the max_value doesn't exceed the total number of trees
 trees_to_harvest = st.slider("Number of Trees to Harvest", min_value=10, max_value=max_slider_value, value=total_trees_2021 // 2)
 
@@ -34,7 +35,7 @@ initial_trees_per_class = trees_to_harvest // 5
 
 for i, dbh_class in enumerate(dbh_classes):
     max_trees = min(trees_to_harvest, df[f'D{selected_year}'].iloc[i])
-    trees_for_dbh_class = st.number_input(f"Number of Trees for {dbh_class}", min_value=0, max_value=max_trees, value=initial_trees_per_class)
+    trees_for_dbh_class = st.number_input(f"Number of Trees for {dbh_class}", min_value=0, max_value=max_slider_value, value=initial_trees_per_class)
     dbh_inputs.append(trees_for_dbh_class)
 
 # Button to apply the simulation
@@ -52,8 +53,28 @@ if st.button("Apply Simulation"):
 
 
         # Read the CSV file
-        df = pd.read_csv('Prediction/DBHPrediction2055.csv')
+        #df = pd.read_csv('Prediction/DBHPrediction2055.csv')
         # Remove 385 rows randomly
+        import requests
+        import pandas as pd
+
+        url = f'https://2814-34-73-117-0.ngrok-free.app/Predictionto2055{selected_ml}'
+
+        # Replace 'localhost:8000' with your server's address
+
+        # Make a POST request to the endpoint
+        response = requests.post(url)
+
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Extract the JSON response
+            data = response.json()
+            # Fetch the predictions
+            df = pd.DataFrame(data)
+        else:
+            print("Error:", response.status_code)
+
+        #st.write(df)
         num_rows_to_remove = trees_to_harvest
         rows_to_remove = df.sample(num_rows_to_remove).index
         df = df.drop(rows_to_remove)
@@ -64,6 +85,7 @@ if st.button("Apply Simulation"):
 
         # Calculate the average for each year
         average_per_year = data_years.mean()
+        #st.write(average_per_year)
         # st.line_chart(average_per_year)
         fig, ax = plt.subplots()
         ax.set_xlabel("Year")

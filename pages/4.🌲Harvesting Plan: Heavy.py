@@ -68,7 +68,7 @@ display_table_heavy()
 #-------------------------------------------------------------------
 
 st.markdown("<div style='height: 70px;'></div>", unsafe_allow_html=True)
-st.write(' Here, based on the objective you have, you can see the details of prescription plan')
+st.write('Here, based on the objective you have, you can see the details of prescription plan')
 
 #------------------------------------------------------------------------------------------------Objective Table
 
@@ -685,7 +685,7 @@ data = {
                   'Dominance', 'Dominance'],
     'Regime': ['heavy', 'medium', 'light', 'heavy', 'medium', 'light', 'heavy', 'medium', 'light'],
     'Carbon Loss': [9.07, 11.71, 13.67, 9, 11.80, 14.01, 9.1, 11.66, 13.66],
-    'Predicted Carbon Loss(M) in 2055 after harvesting': [8.71, 9.71, 11.67, 7, 8.80, 10.01, 7.1, 8.66, 10.66]
+    'Carbon Loss(M) in 2055': [8.71, 9.71, 11.67, 7, 8.80, 10.01, 7.1, 8.66, 10.66]
 }
 
 # Create DataFrame
@@ -707,21 +707,21 @@ def generate_row_html(row):
     else:
         row_color = 'background-color: #FF9999;'  # Red
 
-    return f"""<tr style="{row_color}">
-            <td>{row['Objective']}</td>
-            <td>{row['Regime']}</td>
-            <td>{row['Carbon Loss']}</td>
-            <td>{row['Predicted Carbon Loss(M) in 2055 after harvesting']}</td>
-        </tr>"""
+    return f"""<tbody><tr style="{row_color}">
+            <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">{row['Objective']}</td>
+            <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">{row['Regime']}</td>
+            <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">{row['Carbon Loss']}</td>
+            <td style="font-size: 14px; color: #4f483f; padding: 8px; border-bottom: 1px solid #ddd;">{row['Carbon Loss(M) in 2055']}</td>
+        </tr></tbody>"""
 
 
 # Generate HTML code for the table with color-coding
-html_code = """<table><tr>
-            <th>Objective</th>
-            <th>Regime</th>
-            <th>Carbon Loss(M)</th>
-            <th>Predicted Carbon Loss(M) in 2055 after harvesting</th>
-        </tr>"""
+html_code = """<table style="font-size: 18px; text-align: left; border-collapse: collapse; width: 100%;"><thead><tr>
+            <th style="background-color: #919B3e; color: #222577A; font-size: 16px; padding: 8px; border-bottom: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Objective</th>
+            <th style="background-color: #919B3e; color: #222577A; font-size: 16px; padding: 8px; border-bottom: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Regime</th>
+            <th style="background-color: #919B3e; color: #222577A; font-size: 16px; padding: 8px; border-bottom: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Loss(M)</th>
+            <th style="background-color: #919B3e; color: #222577A; font-size: 16px; padding: 8px; border-bottom: 3px solid #ddd; border-left: 3px solid #ddd; border-top: 3px solid #ddd;">Carbon Loss(M) in 2055</th>
+        </tr></thead>"""
 
 # Iterate through rows to create HTML table rows with color-coding
 for index, row in df_sorted.iterrows():

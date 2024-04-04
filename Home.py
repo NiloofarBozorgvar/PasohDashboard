@@ -13,12 +13,12 @@ show_pages(
         Page("Home.py", "Home", "🏠"),
         Page("pages/1.📖Summary.py", "Summary", "📖"),
         Page("pages/2.📝Insight.py", "Insight", "📝"),
-        Page("pages/3. 📟Digital Twin.py", "Digital Twin", "📟"),
+        Page("pages/3. ⛑️ Prescription Scenarios.py", "Prescription Scenarios", "⛑️"),
         Page("pages/4.🌲Harvesting Plan: Heavy.py", "Harvesting Plan: Heavy", "🌲"),
         Page("pages/5.🌳Harvesting Plan: Medium.py", "Harvesting Plan: Medium", "🌳"),
         Page("pages/6.🌴Harvesting Plan: Light.py", "Harvesting Plan: Light", "🌴"),
         Page("pages/7.📊Simulation.py" , "Simulation" , "📊"),
-        Page("pages/Harvesting Plan.py", "Harvesting Plan", "")
+        #Page("pages/8. 📟Digital Twin.py", "Digital Twin", "📟"),
 
     ]
 )
